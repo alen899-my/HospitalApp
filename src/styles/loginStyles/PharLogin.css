@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
+.phar_login_container{
+    display: flex;
+    min-height: 100vh;
+}
+.left_image{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.phaloginBox{
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: snow;
+}
+.phaloginTxt h1{
+    margin-bottom: 30px;
+    font-size: 32px;
+    text-align: center1;
+    color: 
+    #5ae4a7;
+    font-family: "cas";
+    font-family: "Cascadia Code", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+}
+.Phar_login_form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pform_group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pform_group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color :
+    #46d896;
+  }
+  
+  .pform_group input {
+    padding: 10px;
+    border: 1px solid 
+    #45da97;
+    border-radius: 5px;
+  }
+  
+  .plogin_button {
+    padding: 12px;
+    background-color:
+    #46df9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .plogin_button:hover {
+    background-color: 
+    #72bb9a;
+  }
+  
