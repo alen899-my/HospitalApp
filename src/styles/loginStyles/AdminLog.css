@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
+.ad_login_container{
+    display: flex;
+    min-height: 100vh;
+}
+.left_image{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.adloginBox{
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: snow;
+}
+.adloginTxt h1{
+    margin-bottom: 30px;
+    font-size: 32px;
+    text-align: center1;
+    color: 
+    #3462c5;
+    font-family: "cas";
+    font-family: "Cascadia Code", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+}
+.ad_login_form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.adform_group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .adform_group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color :
+    #132886;
+  }
+  
+  .adform_group input {
+    padding: 10px;
+    border: 1px solid 
+    #17419b;
+    border-radius: 5px;
+  }
+  
+  .adlogin_button {
+    padding: 12px;
+    background-color:
+    #1a2f8b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .adlogin_button:hover {
+    background-color: 
+    #192591;
+  }
+  
