@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.admindash {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.admindashside {
+  width: 220px;
+  background-color: #252422;
+  color: #edd382;
+  padding: 20px;
+}
+
+.admindashside h2 {
+  margin-bottom: 30px;
+  font-size: 22px;
+  border-bottom: 1px solid #e9edc9;
+  padding-bottom: 10px;
+}
+
+.admindashside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admindashside ul li {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.admindashside ul li:hover {
+  background-color: #621708;
+}
+
+.admindashside ul li.active {
+  background-color: #bc3908;
+  font-weight: bold;
+}
+
+.admindashmain {
+  flex: 1;
+  padding: 0px;
+  background-color: #fefae0;
+  overflow-y: auto;
+}
+
+/* View sections */
+.list-view,
+.detail-view {
+  margin-top: 20px;
+}
+
+/* Data items list */
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.data-item button {
+  background-color: #bc3908;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.data-item button:hover {
+  background-color: #a83206;
+}
+
+.detail-view button {
+  margin-top: 10px;
+  background-color: #621708;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.detail-view pre {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

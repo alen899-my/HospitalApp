@@ -1,0 +1,98 @@
+.doctorpanel.light-theme {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fb;
+  
+  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+   margin: auto;
+  height: 100vh;
+  border: 1px solid #000000;
+}
+
+.doctorpanel-header h2 {
+  font-size: 1.8rem;
+  color: #1e2a38;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.doctorpanel-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #000000;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.tab-btn.active {
+  font-weight: bold;
+  color: #000000;
+  border-bottom: 3px solid #000000;
+}
+
+.doctorpanel-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+ 
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.section-note {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  
+}
+
+.button-card {
+  background: #edd382;
+  border: 1px solid #1e2a38;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.button-card:hover {
+  background: #d8c17f;
+}
+
+.icon {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.label {
+  font-size: 1rem;
+  color: #333;
+}
