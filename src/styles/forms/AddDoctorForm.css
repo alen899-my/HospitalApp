@@ -1,0 +1,83 @@
+.add-doctor-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .add-doctor-form {
+    background-color: #252422;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .add-doctor-form h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e9edc9;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  
+  .form-grid div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-grid label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #e9edc9;
+  }
+  
+  .form-grid input,
+  .form-grid select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #c4a9a9;
+  }
+  
+  .form-actions {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .form-actions button {
+    padding: 10px 30px;
+    background-color: #44a755;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .form-actions button:hover {
+    background-color: #2cb374;
+  }
+  

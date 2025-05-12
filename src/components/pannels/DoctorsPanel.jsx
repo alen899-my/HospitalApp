@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "../../styles/panels/Doctorpanel.css"; // You'll update this CSS next
+import "../../styles/panels/Doctorpanel.css";
+import AddDoctorForm from "../addon/AddDoctorForm";
 
-const TabContent = ({ title, buttons, note }) => {
+const TabContent = ({ title, buttons, note, onButtonClick }) => {
   const getIcon = (label) => {
     if (/Add|Create/.test(label)) return "➕";
     if (/Edit|Update/.test(label)) return "✏️";
@@ -19,7 +20,11 @@ const TabContent = ({ title, buttons, note }) => {
 
       <div className="button-grid">
         {buttons.map((label, index) => (
-          <div key={index} className="button-card">
+          <div
+            key={index}
+            className="button-card"
+            onClick={() => onButtonClick(label)}
+          >
             <span className="icon">{getIcon(label)}</span>
             <span className="label">{label}</span>
           </div>
@@ -31,6 +36,15 @@ const TabContent = ({ title, buttons, note }) => {
 
 const DoctorsPanel = () => {
   const [activeTab, setActiveTab] = useState("management");
+  const [selectedAction, setSelectedAction] = useState("");
+
+  const handleButtonClick = (label) => {
+    if (label === "Add New Doctor") {
+      setSelectedAction("add");
+    } else {
+      setSelectedAction(""); // clear action if another is selected
+    }
+  };
 
   const tabs = [
     { id: "management", label: "Doctor Management" },
@@ -82,7 +96,10 @@ const DoctorsPanel = () => {
           <button
             key={tab.id}
             className={`tab-btn ${activeTab === tab.id ? "active" : ""}`}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => {
+              setActiveTab(tab.id);
+              setSelectedAction(""); // reset form when tab changes
+            }}
           >
             {tab.label}
           </button>
@@ -90,7 +107,13 @@ const DoctorsPanel = () => {
       </nav>
 
       <main className="doctorpanel-content">
-        <TabContent {...tabSections[activeTab]} />
+        <TabContent
+          {...tabSections[activeTab]}
+          onButtonClick={handleButtonClick}
+        />
+
+{selectedAction === "add" && <AddDoctorForm onClose={() => setSelectedAction("")} />}
+
       </main>
     </div>
   );
