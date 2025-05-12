@@ -116,7 +116,7 @@ const DoctorsPanel = () => {
         />
 
 {selectedAction === "add" && <AddDoctorForm onClose={() => setSelectedAction("")} />}
-{selectedAction === "view" && <ViewDoctors />}
+{selectedAction === "view" && <ViewDoctors onClose={() => setSelectedAction("")} />}
 
       </main>
     </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../styles/forms/ViewDoctors.css'; // You can copy AddDoctorForm styles here
 
-const ViewDoctors = () => {
+const ViewDoctors = ({ onClose }) => {
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -19,47 +19,36 @@ const ViewDoctors = () => {
       });
   }, []);
 
-  if (loading) return <div className="view-doctor-container">Loading doctors...</div>;
-  if (error) return <div className="view-doctor-container error">Error loading doctors.</div>;
+  if (loading) return <div className="add-doctor-overlay"><div className="view-doctor-container">Loading doctors...</div></div>;
+  if (error) return <div className="add-doctor-overlay"><div className="view-doctor-container error">Error loading doctors.</div></div>;
 
   return (
-    <div className="view-doctor-container">
-      <h4>👨‍⚕️ All Doctors</h4>
-      <div className="doctor-table-wrapper">
-        <table className="doctor-table">
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>Full Name</th>
-              <th>Specialization</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Gender</th>
-              <th>DOB</th>
-              <th>Qualification</th>
-              <th>Experience</th>
-              <th>City</th>
-              <th>State</th>
-            </tr>
-          </thead>
-          <tbody>
-            {doctors.map((doc) => (
-              <tr key={doc.id || doc.username}>
-                <td>{doc.username}</td>
-                <td>{doc.full_name}</td>
-                <td>{doc.specialization}</td>
-                <td>{doc.email}</td>
-                <td>{doc.phone}</td>
-                <td>{doc.gender}</td>
-                <td>{doc.dob}</td>
-                <td>{doc.qualifications}</td>
-                <td>{doc.experience}</td>
-                <td>{doc.city}</td>
-                <td>{doc.state}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="add-doctor-overlay">
+      <div className="view-doctor-container">
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <button className="close-btn" onClick={onClose}>❌</button>
+        </div>
+        <h4>👨‍⚕️ All Doctors</h4>
+        <div className="doctor-list">
+          {doctors.map((doc) => (
+            <div className="doctor-list-item" key={doc.id || doc.email}>
+              <div className="doctor-list-avatar">
+                {doc.gender && doc.gender.toLowerCase() === 'female' ? '👩‍⚕️' : '👨‍⚕️'}
+              </div>
+              <div className="doctor-list-main">
+                <div className="doctor-list-name">{doc.full_name}</div>
+                <div className="doctor-list-specialization">{doc.specialization}</div>
+                <div className="doctor-list-email">{doc.email}</div>
+              </div>
+              <div className="doctor-list-secondary">
+                <div><b>Phone:</b> {doc.phone_number}</div>
+                <div><b>City:</b> {doc.city}</div>
+                <div><b>State:</b> {doc.state}</div>
+                <div><b>Experience:</b> {doc.experience}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
