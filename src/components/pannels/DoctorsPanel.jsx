@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/panels/Doctorpanel.css";
 import AddDoctorForm from "../addon/AddDoctorForm";
+import ViewDoctors from "../addon/ViewDoctors";
 
 const TabContent = ({ title, buttons, note, onButtonClick }) => {
   const getIcon = (label) => {
@@ -41,6 +42,8 @@ const DoctorsPanel = () => {
   const handleButtonClick = (label) => {
     if (label === "Add New Doctor") {
       setSelectedAction("add");
+    } else if (label === "View All Doctors") {
+      setSelectedAction("view");
     } else {
       setSelectedAction(""); // clear action if another is selected
     }
@@ -113,6 +116,7 @@ const DoctorsPanel = () => {
         />
 
 {selectedAction === "add" && <AddDoctorForm onClose={() => setSelectedAction("")} />}
+{selectedAction === "view" && <ViewDoctors />}
 
       </main>
     </div>
