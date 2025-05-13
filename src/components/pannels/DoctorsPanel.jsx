@@ -117,9 +117,9 @@ const DoctorsPanel = () => {
           {...tabSections[activeTab]}
           onButtonClick={handleButtonClick}
         />
-        {selectedAction === "add" && <AddDoctorForm />}
-        {selectedAction === "view" && <ViewDoctors />}
-        {selectedAction === "credentials" && <AddCredentials />}
+        {selectedAction === "add" && <AddDoctorForm onClose={() => setSelectedAction("")} />}
+        {selectedAction === "view" && <ViewDoctors onClose={() => setSelectedAction("")} />}
+        {selectedAction === "credentials" && <AddCredentials onClose={() => setSelectedAction("")} />}
       </div>
     </div>
   );
