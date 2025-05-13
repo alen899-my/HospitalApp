@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../styles/panels/Doctorpanel.css";
 import AddDoctorForm from "../addon/AddDoctorForm";
 import ViewDoctors from "../addon/ViewDoctors";
+import AddCredentials from "../addon/AddCredentials";
 
 const TabContent = ({ title, buttons, note, onButtonClick }) => {
   const getIcon = (label) => {
@@ -44,6 +45,8 @@ const DoctorsPanel = () => {
       setSelectedAction("add");
     } else if (label === "View All Doctors") {
       setSelectedAction("view");
+    } else if (label === "Create Login Credentials") {
+      setSelectedAction("credentials");
     } else {
       setSelectedAction(""); // clear action if another is selected
     }
@@ -109,16 +112,15 @@ const DoctorsPanel = () => {
         ))}
       </nav>
 
-      <main className="doctorpanel-content">
+      <div className="doctorpanel-content">
         <TabContent
           {...tabSections[activeTab]}
           onButtonClick={handleButtonClick}
         />
-
-{selectedAction === "add" && <AddDoctorForm onClose={() => setSelectedAction("")} />}
-{selectedAction === "view" && <ViewDoctors onClose={() => setSelectedAction("")} />}
-
-      </main>
+        {selectedAction === "add" && <AddDoctorForm />}
+        {selectedAction === "view" && <ViewDoctors />}
+        {selectedAction === "credentials" && <AddCredentials />}
+      </div>
     </div>
   );
 };

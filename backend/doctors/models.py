@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class Doctor(models.Model):
     name = models.CharField(max_length=100)
@@ -23,4 +24,13 @@ class Doctor(models.Model):
 
     def __str__(self):
         return self.full_name
+
+
+class DoctorCredentials(models.Model):
+    doctor = models.OneToOneField(Doctor, on_delete=models.CASCADE, related_name='credentials')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.doctor.name}'s credentials"
 
