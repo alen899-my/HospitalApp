@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../../styles/dashboardsyles/AdminDashboard.css";
-import DoctorsPanel from "../../components/pannels/DoctorsPanel";
-import ReceptionPanel from "../../components/pannels/ReceptionPanel";
-import PharmacistPanel from "../../components/pannels/PharmacistPanel";
+import "../../styles/dashboard/AdminDashboard.css";
+import DoctorsPanel from "../../components/panels/DoctorsPanel";
+import ReceptionPanel from "../../components/panels/ReceptionPanel";
+import PharmacistPanel from "../../components/panels/PharmacistPanel";
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("overview");
